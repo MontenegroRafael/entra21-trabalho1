@@ -1,0 +1,54 @@
+//  Faça um programa que calcule e mostre se um ano é bissexto.
+//Observações:
+//  a.Um ano é bissexto quando este é divisível por 4 mas não é divisível por 100.
+//  b. Um ano é bissexto quando é divisível por 400.
+//  c. Caso o ano seja divisível por 4, deverá verificar se este é divisível por 400.
+//     Caso seja, é bissexto, caso não seja, não será bissexto
+
+//  Por essa razão, os seguintes anos não são bissextos:
+//  1700, 1800, 1900, 2100, 2200, 2300, 2500, 2600:
+//  Isso porque eles são uniformemente divisíveis por 100, mas não por 400.
+//  Os seguintes anos são bissextos: 1600, 2000, 2400
+//  Isso porque eles são uniformemente divisíveis por 100 e 400.
+
+using System;
+
+namespace ex006
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double ano;
+            bool teste1, teste2, teste3;
+            Console.WriteLine("Digite um ano: ");
+            ano = Convert.ToSingle(Console.ReadLine());
+            teste1 = (ano % 4 == 0); // se é divisível por 4
+            teste2 = (ano % 100 == 0); // se é divisível por 100
+            teste3 = (ano % 400 == 0); // se é divisível por 400
+            Console.WriteLine("=======================================================");
+            if (teste1)  // é divisível por 4
+            {
+                if (teste2)  // é divisívle por 100
+                {
+                    if (teste3)  // é divisível por 400
+                    {
+                        Console.WriteLine("O ano digitado é BISSEXTO!");
+                    }
+                    else   // não é divisível por 400
+                    {
+                        Console.WriteLine("O ano digitado NÃO é BISSEXTO!");
+                    }
+                }
+                else  // não é divisível por 100
+                {
+                    Console.WriteLine("O ano digitado é BISSEXTO!");
+                }      
+            }
+            else  // não é divisível por 4
+            {
+                Console.WriteLine("O ano digitado NÃO é BISSEXTO!");
+            }
+        }
+    }
+}

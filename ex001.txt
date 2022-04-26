@@ -1,0 +1,63 @@
+//   Faça um programa que receba o salário de um colaborador, calcule e mostre:
+//   a.Valor após o reajuste, conforme a tabela abaixo;
+//      ● Até R$ 1200: 20 % de aumento;
+//      ● Até R$ 2000: 13 % de aumento;
+//      ● Até R$ 2500: 10 % de aumento;
+//      ● Acima de R$ 2500: 5 % de aumento;
+//   b.Valor total representado pelo acréscimo;
+//   c.Valor do salário em Dólares(considerar a cotação a R$4, 70);
+//   d.Valor do salário em Euros(considerar a cotação a R$5, 20);
+
+using System;
+
+namespace ex001
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double salario, novosalario, reajuste;
+            Console.WriteLine("Digite seu salário R$: ");
+            salario = Convert.ToDouble(Console.ReadLine());
+            reajuste = 0;
+            novosalario = 0;
+            Console.WriteLine("=======================================================");
+            Console.WriteLine("Salário anterior = R$"+ salario);
+            if (salario <= 1200)
+            {
+                Console.WriteLine(" Reajuste de 20% ");
+                reajuste = salario * 0.20;
+                novosalario = (reajuste + salario);
+                Console.WriteLine("Seu sálario reajustado vai ficar R$" + novosalario);
+            }
+            else if ((salario > 1200) && (salario <= 2000))
+            {
+                Console.WriteLine(" Reajuste de 13% ");
+                reajuste = salario * 0.13;
+                novosalario = (reajuste + salario);
+                Console.WriteLine("Seu sálario reajustado vai ficar R$" + novosalario);
+            }
+            else if ((salario > 2000) && (salario <= 2500))
+            {
+                Console.WriteLine(" Reajuste de 10% ");
+                reajuste = salario * 0.10;
+                novosalario = (reajuste + salario);
+                Console.WriteLine("Seu sálario reajustado vai ficar R$" + novosalario);
+            }
+            else if (salario > 2500)
+            {
+                Console.WriteLine(" Reajuste de 5% ");
+                reajuste = salario * 0.05;
+                novosalario = (reajuste + salario);
+                Console.WriteLine("Seu sálario reajustado vai ficar R$" + novosalario);
+            }
+            Console.WriteLine("=======================================================");
+            Console.WriteLine("Valor do reajuste e : R$" + reajuste);
+            Console.WriteLine("=======================================================");
+            Console.WriteLine("Valor do salário em Dollar: U$" + (novosalario * 4, 70));
+            Console.WriteLine("=======================================================");
+            Console.WriteLine("Valor do salário em Euros: EU$" + (novosalario * 5, 20));
+
+        }
+    }
+}

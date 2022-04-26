@@ -1,0 +1,62 @@
+//  Escreva um programa que calcule as raízes de uma equação do segundo grau(ax^2 + bx + c)
+//Observações:
+//  a. Se o delta calculado for negativo, então não haverão raízes reais, o programa deve ser encerrado e isto deverá ser informado ao usuário;
+//  b.Caso o delta calculado seja igual a zero, haverá apenas uma raiz. Esta deverá ser informada ao usuário.
+//  c. Caso o delta seja maior que zero, haverá duas raízes reais. Mostre-as ao usuário.
+
+//  Bhaskara = (-b +- raizquadrada(Delta) ) / 2*a
+//  Delta = b^2 - 4 * a * c
+//  Ex.: x2 + 8x – 9 : Delta=100 Raizes= 1 e -9
+
+using System;
+
+namespace ex003
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, c, delta, bhaskara1, bhaskara2;
+            Console.WriteLine("Digite o valor de a: ");
+            a = Convert.ToSingle(Console.ReadLine());
+            
+            if (a > 0)
+            {
+                
+                Console.WriteLine("Digite o valor de b: ");
+                b = Convert.ToSingle(Console.ReadLine());
+                Console.WriteLine("Digite o valor de c: ");
+                c = Convert.ToSingle(Console.ReadLine());
+                Console.WriteLine("=======================================================");
+                delta = (Math.Pow(b, 2)) - (4 * a * c);
+                bhaskara1 = ((-b + (Math.Sqrt(delta))) / (2 * a));
+                bhaskara2 = ((-b - (Math.Sqrt(delta))) / (2 * a));
+                Console.WriteLine("Delta = " + delta);
+                Console.WriteLine("=======================================================");
+                if (delta < 0)
+                {
+                    Console.WriteLine("Delta NEGATIVO - Não há raizes reais");
+                }
+                else if (delta == 0)
+                {
+                    Console.WriteLine("Delta Igual a zero - Existe apenas uma raiz real");
+                    Console.WriteLine("x1 = " + bhaskara1);
+                    Console.WriteLine("x2 = " + bhaskara2);
+                }
+                else
+                {
+                    Console.WriteLine("Delta Maior que zero - Existe duas raizes reais");
+                    Console.WriteLine("x1 = " + bhaskara1);
+                    Console.WriteLine("x2 = " + bhaskara2);
+                }
+            }
+            
+            else
+            {
+                Console.WriteLine("=======================================================");
+                Console.WriteLine("Valor de 'a' tem que ser maior que zero!");
+            }
+
+        }
+    }
+}
