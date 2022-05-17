@@ -54,9 +54,9 @@ namespace ex001
             Console.WriteLine("=======================================================");
             Console.WriteLine("Valor do reajuste e : R$" + reajuste);
             Console.WriteLine("=======================================================");
-            Console.WriteLine("Valor do salário em Dollar: U$" + (novosalario * 4, 70));
+            Console.WriteLine("Valor do salário em Dollar: U$" + (novosalario / 4, 70));
             Console.WriteLine("=======================================================");
-            Console.WriteLine("Valor do salário em Euros: EU$" + (novosalario * 5, 20));
+            Console.WriteLine("Valor do salário em Euros: EU$" + (novosalario / 5, 20));
 
         }
     }
